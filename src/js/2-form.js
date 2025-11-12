@@ -10,7 +10,6 @@ const STORAGE_KEY = "feedback-form-state";
 
 form.addEventListener("input", (event) => {
     formData[event.target.name] = event.target.value.trim();
-
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 });
 
@@ -18,10 +17,10 @@ try {
     const savedToLS = localStorage.getItem(STORAGE_KEY);
     if (savedToLS) {
         formData = JSON.parse(savedToLS);
-
         form.elements.email.value = formData.email || "";
         form.elements.message.value = formData.message || ""; 
     }
+    
 }   catch (error) {
     console.log("Error reading localStorage", error);
     }
