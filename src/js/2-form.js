@@ -36,7 +36,8 @@ form.addEventListener("submit", (event) => {
         alert("Fill please all fields");
         return;
     }
-    
+
+     formData = { email, message };
     console.log("Form Data", formData);
 
     form.reset();
